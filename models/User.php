@@ -68,6 +68,7 @@
 //}
 
 class User {
+
     static public function getAll(){
         $stmt = Database::connexion()->prepare('SELECT * FROM user');
         $stmt->execute();

@@ -32,7 +32,7 @@ $data = new UserController();
             <td><?php echo $user['first_name']?></td>
             <td><?php echo $user['last_name']?></td>
             <td><?php echo $user['email'] ?></td>
-            <td> <a href="product/delete?id=<?php echo $user['user_id'] ?>" class="btn btn-danger" >delete</a>
+            <td> <a href="delete?id=<?php echo $user['user_id'] ?>" class="btn btn-danger" >delete</a>
                 <a href="product/edit?id=<?php echo $user['user_id'] ?>" class="btn btn-warning" >update</a>
             </td>
         </tr>
