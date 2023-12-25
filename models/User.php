@@ -75,7 +75,8 @@ class User {
         return $stmt->fetchAll();
     }
     static public function delete($id){
-        $stmt = Database::connexion()->prepare('DELETE FROM `user` WHERE `id` = :id');
+        var_dump($id);
+        $stmt = Database::connexion()->prepare('DELETE FROM `user` WHERE `user_id` = :id');
         $stmt->bindParam(':id',$id);
         $stmt->execute();
     }

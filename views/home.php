@@ -7,11 +7,11 @@ $data = new UserController();
 
 <h2 class="m-3">Users List:</h2>
 <table class="table table-dark table-striped mt-5" >
-    <div class="d-flex justify-content-end p-2">
-        <a href="product/add" class="btn btn-dark mt-5" >Add New User</a>
-
-
-    </div>
+<!--    <div class="d-flex justify-content-end p-2">-->
+<!--        <a href="product/add" class="btn btn-dark mt-5" >Add New User</a>-->
+<!---->
+<!---->
+<!--    </div>-->
     <thead>
     <tr>
         <th scope="col">id</th>

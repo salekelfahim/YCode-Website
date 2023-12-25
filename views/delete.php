@@ -1,4 +1,4 @@
 <?php
 echo "hahhahaha";
         $userdlt= new UserController();
-        $userdlt->deleteUser();
+        $userdlt->deleteUser($_GET['id']);

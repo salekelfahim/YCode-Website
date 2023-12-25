@@ -5,9 +5,11 @@ class UserController{
         $user = User::getAll();
         return $user;
     }
-    public function deleteUser(){
+    public function deleteUser($id){
         echo "im here";
-            $result= User::delete($_GET['id']);
+        echo "$id";
+            $result= User::delete($id);
+            var_dump($result);
             if ($result === 'ok'){
                 Redirect::to('home');
             }else {
