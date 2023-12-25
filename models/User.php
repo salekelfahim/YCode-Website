@@ -75,10 +75,18 @@ class User {
         return $stmt->fetchAll();
     }
     static public function delete($id){
-        var_dump($id);
-        $stmt = Database::connexion()->prepare('DELETE FROM `user` WHERE `user_id` = :id');
-        $stmt->bindParam(':id',$id);
-        $stmt->execute();
+        $stmt = Database::connexion()->prepare('DELETE FROM `user` WHERE `user_id` = ?');
+        $stmt->execute([$id]);
+    }
+    static public function add($newuser){
+        $stmt = Database::connexion()->prepare("INSERT INTO user (first_name, last_name, email, password, role_id) VALUES (:fname, :lname, :email, :password, :role)");
+
+        $stmt->bindParam(':fname',$newuser['firstName']);
+        $stmt->bindParam(':lname',$newuser['lastName']);
+        $stmt->bindParam(':email',$newuser['email']);
+        $stmt->bindParam(':password',$newuser['password']);
+        $stmt->bindParam(':role',$newuser['role']);
+        return $stmt->execute();
     }
 
 }

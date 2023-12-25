@@ -6,16 +6,27 @@ class UserController{
         return $user;
     }
     public function deleteUser($id){
-        echo "im here";
-        echo "$id";
             $result= User::delete($id);
-            var_dump($result);
-            if ($result === 'ok'){
-                Redirect::to('home');
-            }else {
-                echo "Error";
-            }
+        if($result){
+            header('location:./index');
         }
+        return $result;
+        }
+        public function addUser(){
+                    $newuser = array(
+                        'firstName' => $_POST['fname'],
+                        'lastName' => $_POST['lname'],
+                        'email' => $_POST['email'],
+                        'password' => $_POST['password'],
+                        'role' => $_POST['role'],
+                    );
+                $add = User::add($newuser);
+                if($add){
+                    header('location:./index');
+                }
+                return $add;
+            }
+
 
 }
 ?>
